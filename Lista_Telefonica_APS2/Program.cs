@@ -59,7 +59,7 @@ while (true)
             {
                 Console.WriteLine("Enter the phone name.");
                 name = Console.ReadLine();
-                Functions.SearchForContactByPhone(name);
+                Functions.SearchForContactByName(name);
                 break;
             }
 

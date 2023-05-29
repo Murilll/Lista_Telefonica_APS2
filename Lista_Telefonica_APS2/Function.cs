@@ -27,11 +27,12 @@ public class Function
         foreach (var item in Contact)
         {
             if (item.Telephone == number)
+            {
                 Console.WriteLine($"ID: {item.Identifier}\nName: {item.Name}\nTelephone: {item.Telephone}\n");
-
-            else
-                Console.WriteLine("this contact does not exist");
+            }   
         }
+
+        Console.WriteLine("this contact does not exist");
     }
 
     public void SearchForContactByName(string name)
@@ -39,11 +40,13 @@ public class Function
         foreach (var item in Contact)
         {
             if (item.Name == name)
+            {
                 Console.WriteLine($"ID: {item.Identifier}\nName: {item.Name}\nTelephone: {item.Telephone}\n");
-
-            else
-                Console.WriteLine("this contact does not exist");
+                return;
+            }
         }
+        
+        Console.WriteLine("this contact does not exist");
     }
 
     public void SearchForContactByNameLinq(string name)
@@ -57,12 +60,16 @@ public class Function
         foreach (var item in Contact)
         {
             if (item.Name == null)
+            { 
                 return result;
+                break;
+            }
 
             else if (item.Telephone == number)
             {
                 Console.WriteLine($"Successfully Deleted.");
                 Contact.Remove(item);
+                break;
             }
         }
 
@@ -74,12 +81,16 @@ public class Function
         foreach (var item in Contact)
         {
             if (item.Name == null)
+            { 
                 return result;
+                break;
+            }
 
             else if (item.Name == name)
             {
                 Console.WriteLine($"Successfully Deleted.");
                 Contact.Remove(item);
+                break;
             }
         }
 

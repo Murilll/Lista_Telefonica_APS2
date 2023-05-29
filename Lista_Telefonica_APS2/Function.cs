@@ -25,21 +25,31 @@ public class Function
     public void SearchForContactByPhone(string number)
     {
         foreach (var item in Contact)
+        {
             if (item.Telephone == number)
                 Console.WriteLine($"ID: {item.Identifier}\nName: {item.Name}\nTelephone: {item.Telephone}\n");
+
+            else
+                Console.WriteLine("this contact does not exist");
+        }
+    }
+
+    public void SearchForContactByName(string name)
+    {
+        foreach (var item in Contact)
+        {
+            if (item.Name == name)
+                Console.WriteLine($"ID: {item.Identifier}\nName: {item.Name}\nTelephone: {item.Telephone}\n");
+
+            else
+                Console.WriteLine("this contact does not exist");
+        }
     }
 
     public void SearchForContactByNameLinq(string name)
     {
         List<Person> SearchName = Contact.Where(x => x.Name == name).ToList();
         Console.WriteLine(SearchName);
-    }
-
-    public void SearchForContactByName(string name)
-    {
-        foreach (var item in Contact)
-            if (item.Name == name)
-                Console.WriteLine($"ID: {item.Identifier}\nName: {item.Name}\nTelephone: {item.Telephone}\n");
     }
 
     public string DeleteContactsByNumber(string number)
@@ -79,7 +89,7 @@ public class Function
     public void DeleteContactByNameUsingLinq(string name)
     {
         List<Person> SearchName = Contact.Where(x => x.Name == name).ToList();
-        // SearchName.Remove();
+        //SearchName.Remove();
 
         Console.WriteLine("Successfully Deleted."); 
     }

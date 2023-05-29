@@ -68,4 +68,26 @@ public class Function
 
         return result;
     }
+
+    public List<Person> SortContactsbyName()
+    {
+        List<Person> SortedByName = Contact.OrderBy(x => x.Name).ToList();
+        foreach (var item in SortedByName)
+        {
+            System.Console.WriteLine($"ID: {item.Identifier}\nName: {item.Name}\nTelephone: {item.Telephone}\n");
+        }
+
+        return SortedByName;
+    }
+
+    public List<Person> SortContactsbyNumber()
+    {
+        List<Person> SortedByName = Contact.OrderBy(x => x.Telephone).ToList();
+        foreach (var item in SortedByName)
+        {
+            System.Console.WriteLine($"ID: {item.Identifier}\nName: {item.Name}\nTelephone: {item.Telephone}\n");
+        }
+
+        return SortedByName;
+    }
 }

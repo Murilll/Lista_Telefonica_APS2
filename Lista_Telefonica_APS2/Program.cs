@@ -1,25 +1,35 @@
 ﻿using Lista_Telefonica_APS2;
 
-Function Funções = new Function();
+Function Funtions = new Function();
 
 Person people = new Person(1, "Murilo", "41999999");
+Person people1 = new Person(2, "fdsaf", "543654");
+Person people2 = new Person(3, "ghfsh", "543654");
+Person people3 = new Person(4, "hgtejeh", "435643");
+
 Console.WriteLine("");
 
 
 
-Funções.AddPerson(people);
+Funtions.AddPerson(people);
+Funtions.AddPerson(people1);
+Funtions.AddPerson(people2);
+Funtions.AddPerson(people3);
 
 
+Funtions.SearchForFontactByName("fdsaf");
 
-Funções.DeleteContactsByNumber("41999999");
+Funtions.SearchForFontactByPhone("435643");
 
-
-foreach (var item in Funções.Contact)
-{
-    Console.WriteLine(item.Name);
-}
-
-Funções.DeleteContactsByNumber("41999999");
+// Funtions.DeleteContactsByName("ghfsh");
 
 
-Funções.DeleteContactsByNumber("41999999");
+// Funtions.DeleteContactsByNumber("41999999");
+
+
+Funtions.GetPerson();
+
+// Funtions.DeleteContactsByNumber("41999999");
+
+
+// Funtions.DeleteContactsByNumber("41999999");

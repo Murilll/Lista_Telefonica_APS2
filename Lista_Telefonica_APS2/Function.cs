@@ -69,7 +69,7 @@ public class Function
         return result;
     }
 
-    public List<Person> SortContactsbyName()
+    public List<Person> SortContactsByName()
     {
         List<Person> SortedByName = Contact.OrderBy(x => x.Name).ToList();
         foreach (var item in SortedByName)
@@ -80,7 +80,7 @@ public class Function
         return SortedByName;
     }
 
-    public List<Person> SortContactsbyNumber()
+    public List<Person> SortContactsByNumber()
     {
         List<Person> SortedByName = Contact.OrderBy(x => x.Telephone).ToList();
         foreach (var item in SortedByName)

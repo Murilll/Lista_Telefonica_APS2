@@ -1,6 +1,6 @@
 ﻿using Lista_Telefonica_APS2;
 
-Function Funtions = new Function();
+Function Functions = new Function();
 
 Person people = new Person(1, "Murilo", "41999999");
 Person people1 = new Person(2, "fdsaf", "543654");
@@ -9,26 +9,25 @@ Person people3 = new Person(4, "hgtejeh", "435643");
 
 Console.WriteLine("");
 
-Funtions.AddPerson(people);
-Funtions.AddPerson(people1);
-Funtions.AddPerson(people2);
-Funtions.AddPerson(people3);
+// Functions.AddPerson(people);
+Functions.AddPerson(people1);
+Functions.AddPerson(people2);
+Functions.AddPerson(people3);
 
+// Functions.SearchForContactByName("Murilo");
 
-Funtions.SearchForFontactByName("fdsaf");
+// Functions.SearchForContactByPhone("435643");
 
-Funtions.SearchForFontactByPhone("435643");
+// Functions.SearchForContactByNameLinq("Murilo");
 
-// Funtions.DeleteContactsByName("ghfsh");
+// Functions.DeleteContactsByName("Murilo");
 
+// Functions.DeleteContactsByNumber("41999999");
 
-// Funtions.DeleteContactsByNumber("41999999");
+// Functions.SortContactsByNumber();
 
-Funtions.SortContactsByNumber();
+ Functions.GetPerson();
 
-//Funtions.GetPerson();
+// Functions.DeleteContactsByNumber("41999999");
 
-// Funtions.DeleteContactsByNumber("41999999");
-
-
-// Funtions.DeleteContactsByNumber("41999999");
+// Functions.DeleteContactsByNumber("41999999");

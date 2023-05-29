@@ -1,4 +1,5 @@
 using Lista_Telefonica_APS2;
+using System.Security.Cryptography.X509Certificates;
 
 public class Function
 {
@@ -21,14 +22,20 @@ public class Function
         Console.WriteLine("---------------------------");
     }
 
-    public void SearchForFontactByPhone(string number)
+    public void SearchForContactByPhone(string number)
     {
         foreach (var item in Contact)
             if (item.Telephone == number)
                 Console.WriteLine($"ID: {item.Identifier}\nName: {item.Name}\nTelephone: {item.Telephone}\n");
     }
 
-    public void SearchForFontactByName(string name)
+    public void SearchForContactByNameLinq(string name)
+    {
+        List<Person> SearchName = Contact.Where(x => x.Name == name).ToList();
+        Console.WriteLine(SearchName);
+    }
+
+    public void SearchForContactByName(string name)
     {
         foreach (var item in Contact)
             if (item.Name == name)
@@ -44,7 +51,7 @@ public class Function
 
             else if (item.Telephone == number)
             {
-                Console.WriteLine($"ID: {item.Identifier}\nName: {item.Name}\nTelephone: {item.Telephone}\nSuccessfully Deleted.");
+                Console.WriteLine($"Successfully Deleted.");
                 Contact.Remove(item);
             }
         }
@@ -61,12 +68,20 @@ public class Function
 
             else if (item.Name == name)
             {
-                Console.WriteLine($"ID: {item.Identifier}\nName: {item.Name}\nTelephone: {item.Telephone}\nSuccessfully Deleted.");
+                Console.WriteLine($"Successfully Deleted.");
                 Contact.Remove(item);
             }
         }
 
         return result;
+    }
+
+    public void DeleteContactByNameUsingLinq(string name)
+    {
+        List<Person> SearchName = Contact.Where(x => x.Name == name).ToList();
+        // SearchName.Remove();
+
+        Console.WriteLine("Successfully Deleted."); 
     }
 
     public List<Person> SortContactsByName()
